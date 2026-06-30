@@ -13,10 +13,10 @@ function App() {
    
    const closeToast = () => setToast(null);
    
-   useEffect(() => {
+  useEffect(() => {
      const timer = setTimeout(() => {
        setIntroDone(true);
-     }, 2200);
+     }, 4500);
      return () => clearTimeout(timer);
    }, []);
    
