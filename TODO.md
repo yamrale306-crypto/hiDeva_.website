@@ -37,3 +37,8 @@
 - [ ] FAQ
 - [ ] Security information
 - [ ] Footer with essential links
+
+## Snapshot System (Completed)
+- [x] Add Snapshot System as a feature
+- [x] Add Snapshots panel to Showcase with call recording/transcription/action items
+- [x] Camera icon for visual representation

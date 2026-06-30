@@ -8,9 +8,9 @@ function Hero() {
   const [typed, setTyped] = useS("");
   const phrases = useM(
     () => [
-      "Stop context-switching. Start shipping.",
-      "Your codebase, your agents, your rules.",
-      "Write specs. Ship features. Sleep well.",
+      "Automate every phone call with AI.",
+      "Your AI employee answers 24/7.",
+      "Never miss another call.",
     ],
     []
   );
@@ -33,16 +33,10 @@ function Hero() {
     <section className="relative pt-28 md:pt-36 pb-20 overflow-hidden">
       <AuroraBG />
       <div className="relative mx-auto max-w-6xl px-5 z-10">
-        {/* floating glass chips */}
-        <FloatingChip className="left-[4%] top-[10%] floaty" label="agent.plan()" icon="brain" />
-        <FloatingChip className="right-[6%] top-[14%] floaty d2" label="build · 84%" icon="cpu" tone="violet" />
-        <FloatingChip className="left-[8%] bottom-[8%] floaty d3" label="3 agents online" icon="users" tone="cyan" />
-        <FloatingChip className="right-[8%] bottom-[12%] floaty" label="deploy ok" icon="check-circle-2" tone="emerald" />
-
         <div className="flex flex-col items-center text-center">
           <a href="#" className="badge reveal">
             <span className="dot" />
-            New · Agent Memory v2 is here
+            AI Call Assistant · Now live
             <Icon name="arrow-right" size={12} className="text-ink-2" />
           </a>
 
@@ -53,17 +47,16 @@ function Hero() {
             <span className="block">
               <span className="caret">{typed}</span>
             </span>
-            <span className="block text-aurora mt-4">Ship at the speed of thought.</span>
+            <span className="block text-aurora mt-4">Transform phone calls into intelligent business interactions.</span>
           </h1>
 
           <p className="mt-8 text-ink-2 text-lg md:text-xl max-w-2xl leading-relaxed reveal" data-delay="2">
-            hiDeva is the AI-first workspace where autonomous agents plan, code, debug, and deploy alongside your team —
-            all in one fast, focused surface. No 14-tab sprawl. No "works on my machine."
+            hiDeva Call Assistant is an enterprise-grade AI voice platform that automates inbound and outbound phone communications through natural, human-like conversations.
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row items-center gap-3 reveal" data-delay="3">
             <a href="#cta" className="btn btn-primary px-6 py-3.5 text-[15px]">
-              Start building free
+              Get started free
               <Icon name="arrow-right" size={15} />
             </a>
             <a href="#showcase" className="btn btn-ghost px-6 py-3.5 text-[15px]">
@@ -73,17 +66,15 @@ function Hero() {
           </div>
 
           <p className="mt-6 text-ink-3 text-xs reveal" data-delay="4">
-            Free forever for solo developers · No credit card required
+            Free forever for small businesses · No credit card required
           </p>
         </div>
 
-        {/* Product preview */}
         <div className="mt-24 reveal" data-delay="3">
-          <ProductPreview />
+          <CallPreview />
         </div>
 
         <TrustedBy />
-        {/* Scrolling logos */}
         <div className="mt-16 relative overflow-hidden reveal" data-delay="5">
           <div className="flex gap-12 animate-marquee whitespace-nowrap">
             {[...TRUSTED, ...TRUSTED].map((n, i) => (
@@ -93,19 +84,18 @@ function Hero() {
             ))}
           </div>
         </div>
-        {/* Stats row */}
         <div className="mt-24 grid md:grid-cols-3 gap-8 reveal" data-delay="1">
           <div className="glass rounded-2xl p-6">
-            <div className="text-3xl font-display font-bold text-aurora">50k+</div>
-            <div className="text-ink-2 text-sm mt-1">builders shipped code last month</div>
+            <div className="text-3xl font-display font-bold text-aurora">10k+</div>
+            <div className="text-ink-2 text-sm mt-1">business calls automated</div>
           </div>
           <div className="glass rounded-2xl p-6">
-            <div className="text-3xl font-display font-bold text-aurora">2.4M</div>
-            <div className="text-ink-2 text-sm mt-1">deployments and counting</div>
+            <div className="text-3xl font-display font-bold text-aurora">98%</div>
+            <div className="text-ink-2 text-sm mt-1">customer satisfaction</div>
           </div>
           <div className="glass rounded-2xl p-6">
-            <div className="text-3xl font-display font-bold text-aurora">99.99%</div>
-            <div className="text-ink-2 text-sm mt-1">uptime. We take that seriously.</div>
+            <div className="text-3xl font-display font-bold text-aurora">24/7</div>
+            <div className="text-ink-2 text-sm mt-1">always available</div>
           </div>
         </div>
       </div>
@@ -113,32 +103,15 @@ function Hero() {
   );
 }
 
-function FloatingChip({ className, label, icon, tone = "blue" }) {
-  const toneMap = {
-    blue: "text-blue", violet: "text-violet", cyan: "text-cyan", emerald: "text-emerald-400",
-  };
-  return (
-    <div
-      className={`hidden lg:flex absolute glass-strong rounded-full px-3 py-2 items-center gap-2 text-xs text-ink-2 ${className}`}
-      style={{ zIndex: 5 }}
-    >
-      <Icon name={icon} size={13} className={toneMap[tone]} />
-      <span className="font-mono">{label}</span>
-    </div>
-  );
-}
-
-function ProductPreview() {
+function CallPreview() {
    return (
      <div className="relative">
-       {/* glow */}
        <div
          aria-hidden
          className="absolute -inset-x-20 -top-10 h-72 blur-3xl opacity-60"
          style={{ background: "radial-gradient(60% 60% at 50% 30%, #4f7cff66 0%, transparent 70%)" }}
        />
-       <div className="relative glass-strong rounded-2xl ring-aurora overflow-hidden">
-         {/* window chrome */}
+       <div className="relative glass-strong rounded-2xl ring-aurora overflow-hidden max-w-3xl mx-auto">
          <div className="flex items-center justify-between px-4 py-3 border-b border-white/5 reveal" data-delay="1">
            <div className="flex items-center gap-2">
              <span className="win-dot bg-[#ff5f57]" />
@@ -146,211 +119,62 @@ function ProductPreview() {
              <span className="win-dot bg-[#28c840]" />
            </div>
            <div className="flex items-center gap-2 text-ink-3 text-xs font-mono">
-             <Icon name="lock" size={11} />
-             app.hideva.com / workspace / acme-checkout
+             <Icon name="phone" size={11} />
+             call.hideva.com / dashboard
            </div>
            <div className="flex items-center gap-2 reveal" data-delay="1">
-             <Icon name="search" size={13} className="text-ink-3" />
              <Icon name="settings" size={13} className="text-ink-3" />
            </div>
          </div>
-         {/* IDE grid */}
-         <div className="grid grid-cols-12 min-h-[460px]">
-           {/* file tree */}
-           <aside className="col-span-3 border-r border-white/5 p-3 bg-white/[0.015] reveal" data-delay="2">
-             <FileTreePreview />
-           </aside>
-           {/* editor + terminal */}
-           <main className="col-span-6 flex flex-col reveal" data-delay="3">
-             <CodeEditorPreview />
-             <TerminalPreview />
-           </main>
-           {/* AI chat */}
-           <aside className="col-span-3 border-l border-white/5 flex flex-col reveal" data-delay="4">
-             <AIChatPreview />
-           </aside>
+         <div className="p-6 md:p-8">
+           <div className="flex items-center gap-4 mb-6">
+             <div className="w-12 h-12 rounded-xl glass-strong flex items-center justify-center text-cyan">
+               <Icon name="phone" size={24} />
+             </div>
+             <div>
+               <div className="font-display text-xl font-bold">Inbound Call</div>
+               <div className="text-ink-3 text-xs">+1 (555) 123-4567 · 2 min ago</div>
+             </div>
+             <span className="ml-auto text-[11px] font-mono px-2 py-1 rounded-full bg-emerald-400/10 text-emerald-300">
+               completed
+             </span>
+           </div>
+           <div className="grid md:grid-cols-3 gap-4">
+             <div className="glass rounded-xl p-4">
+               <div className="text-[10px] uppercase tracking-widest text-ink-3 mb-2">Intent</div>
+               <div className="text-ink font-medium">Schedule appointment</div>
+             </div>
+             <div className="glass rounded-xl p-4">
+               <div className="text-[10px] uppercase tracking-widest text-ink-3 mb-2">Action</div>
+               <div className="text-ink font-medium">Calendar booked</div>
+             </div>
+             <div className="glass rounded-xl p-4">
+               <div className="text-[10px] uppercase tracking-widest text-ink-3 mb-2">Sentiment</div>
+               <div className="text-emerald-400 font-medium">Positive</div>
+             </div>
+           </div>
          </div>
        </div>
      </div>
    );
  }
 
-function FileTreePreview() {
-  const items = [
-    { n: "app", t: "folder", o: true, c: [
-      { n: "layout.tsx", t: "f" },
-      { n: "page.tsx", t: "f", active: true },
-      { n: "loading.tsx", t: "f" },
-    ]},
-    { n: "components", t: "folder", o: true, c: [
-      { n: "Button.tsx", t: "f" },
-      { n: "Hero.tsx", t: "f" },
-    ]},
-    { n: "lib", t: "folder", c: [] },
-    { n: "package.json", t: "j" },
-    { n: "tsconfig.json", t: "j" },
-    { n: "README.md", t: "m" },
-  ];
-  const renderItem = (it, depth = 0) => {
-    const icon = it.t === "folder" ? (it.o ? "folder-open" : "folder") : it.t === "j" ? "braces" : it.t === "m" ? "file-text" : "file-code-2";
-    const color = it.t === "folder" ? "text-blue" : it.t === "j" ? "text-amber-400" : it.t === "m" ? "text-ink-2" : "text-cyan";
-    return (
-      <div key={it.n}>
-        <div
-          className={`flex items-center gap-2 px-2 py-1 rounded-md text-xs font-mono cursor-default ${
-            it.active ? "bg-blue/10 text-ink" : "text-ink-2 hover:bg-white/[0.04]"
-          }`}
-          style={{ paddingLeft: 8 + depth * 14 }}
-        >
-          <Icon name={icon} size={13} className={color} />
-          <span className="truncate">{it.n}</span>
-        </div>
-        {it.o && it.c && it.c.map((c) => renderItem(c, depth + 1))}
-      </div>
-    );
-  };
-  return (
-    <div className="text-ink-2 text-xs">
-      <div className="flex items-center justify-between px-2 mb-2">
-        <span className="text-[10px] uppercase tracking-widest text-ink-3">Explorer</span>
-        <Icon name="plus" size={12} className="text-ink-3" />
-      </div>
-      <div className="flex items-center gap-1 px-2 mb-3">
-        <Icon name="git-branch" size={11} className="text-ink-3" />
-        <span className="font-mono text-[11px] text-ink-2">feat/checkout-v2</span>
-      </div>
-      {items.map((i) => renderItem(i))}
-    </div>
-  );
-}
-
-function CodeEditorPreview() {
-  const lines = [
-    { n: 1, t: <><span className="text-violet">import</span> {"{ useState }"} <span className="text-violet">from</span> <span className="text-emerald-400">'react'</span></> },
-    { n: 2, t: <><span className="text-violet">import</span> {"{ Agent }"} <span className="text-violet">from</span> <span className="text-emerald-400">'@hideva/sdk'</span></> },
-    { n: 3, t: "" },
-    { n: 4, t: <><span className="text-cyan">export default</span> <span className="text-violet">function</span> <span className="text-amber-300">Checkout</span>() {"{"}</> },
-    { n: 5, t: <>  <span className="text-violet">const</span> agent = <span className="text-violet">new</span> <span className="text-amber-300">Agent</span>(<span className="text-emerald-400">'checkout'</span>)</> },
-    { n: 6, t: <>  <span className="text-violet">const</span> [items, setItems] = <span className="text-amber-300">useState</span>([])</> },
-    { n: 7, t: "" },
-    { n: 8, t: <>  <span className="text-ink-3">// agent suggests:</span></>, ghost: true },
-    { n: 9, t: <span className="text-ink-3/70 italic">  await agent.optimize(items)</span>, ghost: true },
-    { n: 10, t: "" },
-    { n: 11, t: <>  <span className="text-violet">return</span> {"("}</> },
-    { n: 12, t: <>{"    <"}<span className="text-blue">CartGrid</span>{" items={items} />"}</> },
-    { n: 13, t: <>  {")"}</> },
-    { n: 14, t: "}" },
-  ];
-  return (
-    <div className="flex-1 min-h-[260px] p-4 font-mono text-[12.5px] leading-[1.7] relative bg-[#06060c]">
-      <div className="absolute top-3 right-4 flex items-center gap-2 text-[11px] text-ink-3">
-        <span className="badge !py-1 !text-[10px]">
-          <span className="dot" />
-          Agent watching
-        </span>
-        <span className="font-mono">page.tsx</span>
-      </div>
-      <div className="text-ink">
-        {lines.map((l) => (
-          <div key={l.n} className="flex">
-            <span className="text-ink-3/60 w-6 text-right pr-3 select-none">{l.n}</span>
-            <span className={l.ghost ? "" : ""}>{l.t || "\u00A0"}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function TerminalPreview() {
-  return (
-    <div className="border-t border-white/5 bg-black/40 p-3 font-mono text-[11.5px] text-ink-2 max-h-[150px] overflow-hidden">
-      <div className="flex items-center gap-2 mb-2 text-[10px] uppercase tracking-widest text-ink-3">
-        <Icon name="terminal" size={11} />
-        Terminal
-        <span className="ml-auto flex items-center gap-1 text-emerald-400">
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-          ready
-        </span>
-      </div>
-      <div><span className="text-emerald-400">→</span> hideva agent run --plan checkout-v2</div>
-      <div className="text-ink-3">▸ analyzing repo · 142 files · 14 routes</div>
-      <div className="text-ink-3">▸ drafting migration · payments → stripe v3</div>
-      <div><span className="text-blue">✓</span> plan ready · 6 steps · est. 4 min</div>
-      <div className="text-ink"><span className="text-violet">$</span> <span className="caret"></span></div>
-    </div>
-  );
-}
-
-function AIChatPreview() {
-  const msgs = [
-    { who: "user", t: "Refactor the checkout to use Stripe v3 and add idempotency keys." },
-    { who: "ai",   t: "Planning… I'll touch 4 files in /app/checkout and add a /lib/stripe wrapper." },
-    { who: "ai",   t: "Edits ready. 6 steps, 0 breaking changes. Want me to apply them?", actions: true },
-  ];
-  return (
-    <>
-      <div className="flex items-center justify-between px-3 py-3 border-b border-white/5">
-        <div className="flex items-center gap-2">
-          <span className="relative">
-            <span className="w-2 h-2 rounded-full bg-cyan block pulse-dot text-cyan"></span>
-          </span>
-          <span className="text-xs text-ink-2">Deva · thinking</span>
-        </div>
-        <Icon name="more-horizontal" size={14} className="text-ink-3" />
-      </div>
-      <div className="flex-1 p-3 space-y-3 text-[12.5px] overflow-hidden">
-        {msgs.map((m, i) => (
-          <div key={i} className={`flex ${m.who === "user" ? "justify-end" : ""}`}>
-            <div
-              className={`px-3 py-2 rounded-xl max-w-[230px] leading-snug ${
-                m.who === "user"
-                  ? "bg-blue/15 text-ink border border-blue/20"
-                  : "glass text-ink-2"
-              }`}
-            >
-              {m.t}
-              {m.actions && (
-                <div className="mt-2 flex gap-1.5">
-                  <button className="text-[11px] bg-white/10 hover:bg-white/20 px-2 py-1 rounded-md text-ink">Apply</button>
-                  <button className="text-[11px] hover:bg-white/10 px-2 py-1 rounded-md text-ink-2">Preview diff</button>
-                </div>
-              )}
-            </div>
-          </div>
-        ))}
-        <div className="flex gap-2">
-          <div className="skeleton h-2 w-16" />
-          <div className="skeleton h-2 w-24" />
-        </div>
-      </div>
-      <div className="p-3 border-t border-white/5">
-        <div className="glass rounded-xl px-3 py-2 flex items-center gap-2">
-          <Icon name="sparkles" size={13} className="text-violet" />
-          <span className="text-ink-3 text-xs flex-1">Ask anything · ⌘K</span>
-          <Icon name="mic" size={13} className="text-ink-3" />
-        </div>
-      </div>
-    </>
-  );
-}
-
 /* ========================================================
    FEATURES
 ======================================================== */
 const FEATURES = [
-  { i: "code", n: "AI Coding",          d: "Generate, refactor, and review code with agents that actually read your repo — not just the open file.", highlight: true },
-  { i: "bug",  n: "Debugging",          d: "Pinpoint stack traces, replay sessions, and let agents propose fixes that don't break things." },
-  { i: "scan-line", n: "Project Analysis", d: "Architectural maps, dependency graphs, and risk reports — generated in seconds, not days." },
-  { i: "mic",  n: "Voice Assistant",    d: "Talk to Deva while you walk, drive, or stare at the ceiling. Planning, pairing, reviews — hands-free." },
-  { i: "layout-dashboard", n: "AI Workspace", d: "Editor, chat, terminal, and preview in one surface. No more 14-tab sprawl." },
-  { i: "github", n: "GitHub Integration",  d: "Branches, PRs, reviews, and Actions — all wired in, no webhooks to configure." },
-  { i: "search", n: "Smart Search",     d: "Find anything across code, docs, and past conversations. Semantic, not string-matching." },
-  { i: "brain",  n: "AI Memory",        d: "Persistent context that learns your codebase, your style, and your team's weird conventions.", highlight: true },
-  { i: "users",  n: "Team Collaboration", d: "Live cursors, inline comments, shared agent sessions. Remote pair programming, actually good." },
-  { i: "workflow", n: "Automation",     d: "Trigger agents on commits, schedules, or Slack messages. No glue code, no duct tape.", highlight: true },
-  { i: "database", n: "Supabase DB",   d: "Integrated PostgreSQL database with real-time subscriptions. Manage your data with instant APIs.", badge: "supabase" },
-  { i: "globe", n: "Vercel Deploy",    d: "One-click deployments to the edge. Preview URLs for every PR, zero-config SSL, global CDN.", badge: "vercel" },
+  { i: "mic", n: "Intelligent Voice", d: "Human-like conversations with real-time speech recognition and natural interruption handling.", highlight: true },
+  { i: "inbox", n: "Inbound Automation", d: "Answers calls, understands intent, schedules appointments, and processes requests autonomously." },
+  { i: "phone-outgoing", n: "Outbound Automation", d: "Proactively calls for reminders, follow-ups, lead qualification, and surveys." },
+  { i: "camera", n: "Snapshot System", d: "Automatic call recording, transcription, and intelligence extraction for every conversation.", highlight: true },
+  { i: "brain", n: "AI Memory", d: "Persistent customer history and conversation context for personalized interactions." },
+  { i: "book-text", n: "Knowledge Engine", d: "Upload documents, websites, and FAQs for real-time intelligent responses." },
+  { i: "workflow", n: "Workflow Engine", d: "Execute business actions during calls: bookings, payments, tickets, emails." },
+  { i: "calendar", n: "Calendar Management", d: "Integrates with Google, Outlook, and Apple Calendar for appointment scheduling." },
+  { i: "users-round", n: "CRM Integration", d: "Connects with Salesforce, HubSpot, Zoho, and Pipedrive for seamless data sync." },
+  { i: "shield", n: "Call Screening", d: "Spam detection, VIP recognition, and intelligent call routing." },
+  { i: "globe", n: "Multilingual", d: "Supports 20+ languages with live translation and accent recognition." },
+  { i: "bar-chart-3", n: "Analytics", d: "Call volume, resolution rates, satisfaction scores, and AI performance metrics." },
 ];
 function Features() {
   return (
@@ -359,66 +183,189 @@ function Features() {
       <div className="relative mx-auto max-w-6xl px-5">
         <SectionHead
           eyebrow="Capabilities"
-          title="Ten capabilities. One workspace."
-          sub="Everything you need to ship software, in one place. No duct tape, no context-switching, no 'it works on my machine'."
+          title="Everything you need for AI-powered calls."
+          sub="From intelligent voice conversations to workflow automation, all in one enterprise-grade platform."
         />
-<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-           {FEATURES.map((f, idx) => (
-             <TiltCard
-               key={f.n}
-               className={`rounded-2xl p-5 h-full reveal ${f.highlight ? 'glass-strong grad-border ring-aurora sm:col-span-2 lg:col-span-2 lg:row-span-2' : 'glass'}`}
-             >
-               <div className="flex items-start justify-between">
-                 <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${idx % 3 === 0 ? 'bg-blue/10 text-blue' : idx % 3 === 1 ? 'bg-violet/10 text-violet' : 'bg-cyan/10 text-cyan'}`}>
-                   <Icon name={f.i} size={18} />
-                 </div>
-                 <div className="flex items-center gap-1">
-                   {f.badge && (
-                     <span className={`text-[10px] font-mono px-1.5 py-0.5 rounded ${f.badge === 'supabase' ? 'bg-emerald-400/10 text-emerald-300' : 'bg-blue/10 text-blue'}`}>
-                       {f.badge === 'supabase' ? 'Supabase' : 'Vercel'}
-                     </span>
-                   )}
-                   <span className="text-ink-3 text-xs font-mono">{String(idx + 1).padStart(2, '0')}</span>
-                 </div>
-               </div>
-               <h3 className={`mt-${f.highlight ? 6 : 5} font-display ${f.highlight ? "text-2xl" : "text-lg"} font-bold text-ink`}>{f.n}</h3>
-               <p className="mt-2 text-ink-2 text-sm leading-relaxed">{f.d}</p>
-               {idx === 0 && (
-                 <div className="mt-6 glass rounded-xl p-4 font-mono text-[11.5px] text-ink-2">
-                   <div className="flex items-center gap-2 mb-2">
-                     <Icon name="sparkles" size={12} className="text-violet" />
-                     <span className="text-ink-3 text-[10px] uppercase tracking-widest">suggestion</span>
-                   </div>
-                   <div>+ <span className="text-emerald-400">await</span> agent.optimize(<span className="text-amber-300">items</span>)</div>
-                   <div>- <span className="text-rose-300/80">items.sort(byPrice)</span></div>
-                 </div>
-               )}
-             </TiltCard>
-           ))}
-         </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {FEATURES.map((f, idx) => (
+            <TiltCard
+              key={f.n}
+              className={`rounded-2xl p-5 h-full reveal ${f.highlight ? 'glass-strong grad-border ring-aurora sm:col-span-2 lg:col-span-2 lg:row-span-2' : 'glass'}`}
+            >
+              <div className="flex items-start justify-between">
+                <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${idx % 3 === 0 ? 'bg-blue/10 text-blue' : idx % 3 === 1 ? 'bg-violet/10 text-violet' : 'bg-cyan/10 text-cyan'}`}>
+                  <Icon name={f.i} size={18} />
+                </div>
+                <span className="text-ink-3 text-xs font-mono">{String(idx + 1).padStart(2, '0')}</span>
+              </div>
+              <h3 className={`mt-${f.highlight ? 6 : 5} font-display ${f.highlight ? "text-2xl" : "text-lg"} font-bold text-ink`}>{f.n}</h3>
+              <p className="mt-2 text-ink-2 text-sm leading-relaxed">{f.d}</p>
+            </TiltCard>
+          ))}
+        </div>
       </div>
     </section>
   );
 }
 
 /* ========================================================
-    PRODUCT SHOWCASE — bigger, with tabs
-  ========================================================= */
+   INBOUND CALLS
+======================================================== */
+function InboundPanel() {
+  const items = [
+    { n: "Calls answered", v: "24", icon: "phone" },
+    { n: "Appointments scheduled", v: "18", icon: "calendar" },
+    { n: "Tickets created", v: "12", icon: "ticket" },
+    { n: "Avg response time", v: "3s", icon: "zap" },
+  ];
+  return (
+    <div className="glass-strong rounded-3xl ring-aurora p-8">
+      <div className="text-[10px] uppercase tracking-widest text-ink-3 mb-3">Inbound Automation</div>
+      <h3 className="font-display text-3xl font-bold text-grad mb-6">Never miss a call again.</h3>
+      <p className="text-ink-2 mb-8">The AI automatically answers incoming calls and handles customer requests 24/7.</p>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {items.map((it) => (
+          <div key={it.n} className="glass rounded-xl p-4 text-center">
+            <Icon name={it.icon} size={20} className="text-cyan mx-auto mb-2" />
+            <div className="font-display text-2xl font-bold text-aurora">{it.v}</div>
+            <div className="text-ink-2 text-xs mt-1">{it.n}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* ========================================================
+   OUTBOUND CALLS
+======================================================== */
+function OutboundPanel() {
+  const calls = [
+    { t: "Appointment reminder", s: "sent", i: "calendar" },
+    { t: "Payment follow-up", s: "delivered", i: "credit-card" },
+    { t: "Customer survey", s: "completed", i: "clipboard" },
+  ];
+  return (
+    <div className="glass-strong rounded-3xl ring-aurora p-8">
+      <div className="text-[10px] uppercase tracking-widest text-ink-3 mb-3">Outbound Automation</div>
+      <h3 className="font-display text-3xl font-bold text-grad mb-6">Proactive customer engagement.</h3>
+      <p className="text-ink-2 mb-8">Initiate calls for appointments, follow-ups, and more.</p>
+      <div className="space-y-3">
+        {calls.map((c) => (
+          <div key={c.t} className="glass rounded-xl px-4 py-3 flex items-center gap-3">
+            <Icon name={c.i} size={16} className="text-violet" />
+            <div className="flex-1 text-ink text-sm">{c.t}</div>
+            <span className="text-[10px] font-mono px-2 py-1 rounded-full bg-emerald-400/10 text-emerald-300">{c.s}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* ========================================================
+   KNOWLEDGE ENGINE
+======================================================== */
+function KnowledgePanel() {
+  const sources = [
+    { n: "Product FAQs", t: "127 docs", i: "file-text" },
+    { n: "Pricing guides", t: "24 pages", i: "dollar-sign" },
+    { n: "Policies", t: "8 docs", i: "shield" },
+  ];
+  return (
+    <div className="glass-strong rounded-3xl ring-aurora p-8">
+      <div className="text-[10px] uppercase tracking-widest text-ink-3 mb-3">Knowledge Base</div>
+      <h3 className="font-display text-3xl font-bold text-grad mb-6">Instant answers, always accurate.</h3>
+      <p className="text-ink-2 mb-8">Upload documents and FAQs for the AI to retrieve during calls.</p>
+      <div className="space-y-3">
+        {sources.map((s) => (
+          <div key={s.n} className="glass rounded-xl px-4 py-3 flex items-center gap-3">
+            <Icon name={s.i} size={16} className="text-cyan" />
+            <div>
+              <div className="text-ink font-medium text-sm">{s.n}</div>
+              <div className="text-ink-2 text-xs">{s.t}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* ========================================================
+   WORKFLOW ENGINE
+======================================================== */
+function WorkflowPanel() {
+  const actions = [
+    { i: "calendar", t: "Booked appointment for Dr. Smith" },
+    { i: "send", t: "Email confirmation sent to customer" },
+    { i: "ticket", t: "Support ticket #1247 created" },
+  ];
+  return (
+    <div className="glass-strong rounded-3xl ring-aurora p-8">
+      <div className="text-[10px] uppercase tracking-widest text-ink-3 mb-3">Workflow Engine</div>
+      <h3 className="font-display text-3xl font-bold text-grad mb-6">Actions that follow through.</h3>
+      <p className="text-ink-2 mb-8">Execute business operations during conversations.</p>
+      <div className="space-y-3">
+        {actions.map((a) => (
+          <div key={a.t} className="glass rounded-xl px-4 py-3 flex items-center gap-3">
+            <Icon name={a.i} size={16} className="text-violet" />
+            <div className="text-ink-2 text-sm">{a.t}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* ========================================================
+   SNAPSHOT SYSTEM — Call Intelligence
+======================================================== */
+function SnapshotsPanel() {
+  const snapshots = [
+    { t: "Call Summary", d: "Customer called about appointment rescheduling. Successfully moved from Tuesday to Thursday.", i: "file-text" },
+    { t: "Transcript", d: "Full conversation transcript with timestamps and speaker identification.", i: "message-square" },
+    { t: "Action Items", d: "Follow-up email sent, calendar updated, SMS confirmation dispatched.", i: "check-square" },
+    { t: "Sentiment", d: "Positive (0.87) - Customer satisfied with new appointment time.", i: "smile" },
+  ];
+  return (
+    <div className="glass-strong rounded-3xl ring-aurora p-8">
+      <div className="text-[10px] uppercase tracking-widest text-ink-3 mb-3">Call Snapshots</div>
+      <h3 className="font-display text-3xl font-bold text-grad mb-6">Every call, captured and actionable.</h3>
+      <p className="text-ink-2 mb-8">Automatic recording, transcription, and intelligence extraction for every conversation.</p>
+      <div className="grid md:grid-cols-2 gap-4">
+        {snapshots.map((s) => (
+          <div key={s.t} className="glass rounded-xl p-4 flex items-start gap-3">
+            <Icon name={s.i} size={18} className="text-violet shrink-0 mt-0.5" />
+            <div>
+              <div className="text-ink font-medium text-sm">{s.t}</div>
+              <div className="text-ink-2 text-xs mt-1">{s.d}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* ========================================================
+   PRODUCT SHOWCASE — with tabs for Call Assistant features
+======================================================== */
 function Showcase() {
-  const tabs = ["Workspace", "Agents", "Memory", "Integrations"];
+  const tabs = ["Inbound", "Outbound", "Knowledge", "Workflow", "Snapshots", "Analytics"];
   const [t, setT] = useS(0);
   return (
     <section id="showcase" className="relative py-28 overflow-hidden">
       <div className="aurora-stage opacity-50"><div className="aurora-blob b3" /></div>
       <div className="relative mx-auto max-w-6xl px-5">
         <SectionHead
-          eyebrow="The Workspace"
-          title="One surface. Every agent. Every artifact."
-          sub="Stop juggling tools. hiDeva unifies editing, chat, terminal, preview, and agent state into one calm, keyboard-driven canvas."
+          eyebrow="Platform"
+          title="One platform. Every conversation."
+          sub="From answering calls to generating insights, hiDeva handles it all autonomously."
         />
         <div className="flex justify-center mb-8 reveal">
           <div className="glass-strong rounded-full p-1 flex">
-{tabs.map((x, i) => (
+            {tabs.map((x, i) => (
               <button
                 key={x}
                 onClick={() => setT(i)}
@@ -430,237 +377,35 @@ function Showcase() {
           </div>
         </div>
         <div className="reveal" data-delay="1">
-          {t === 0 && <WorkspacePanel />}
-          {t === 1 && <AgentsPanel />}
-          {t === 2 && <MemoryPanel />}
-          {t === 3 && <IntegrationPanel />}
+          {t === 0 && <InboundPanel />}
+          {t === 1 && <OutboundPanel />}
+          {t === 2 && <KnowledgePanel />}
+          {t === 3 && <WorkflowPanel />}
+          {t === 4 && <SnapshotsPanel />}
+          {t === 5 && <AnalyticsPanel />}
         </div>
       </div>
     </section>
   );
 }
 
-function WorkspacePanel() {
-   return (
-     <div className="glass-strong rounded-3xl ring-aurora overflow-hidden">
-       <div className="grid grid-cols-12 min-h-[560px]">
-         <aside className="col-span-3 border-r border-white/5 p-4 bg-white/[0.015] reveal" data-delay="1">
-           <FileTreePreview />
-           <div className="mt-6 reveal" data-delay="2">
-             <div className="text-[10px] uppercase tracking-widest text-ink-3 px-2 mb-2">Agents</div>
-             <AgentRow name="Builder" status="working" icon="hammer" />
-             <AgentRow name="Reviewer" status="idle" icon="shield-check" />
-             <AgentRow name="Debugger" status="paused" icon="bug" />
-           </div>
-         </aside>
-         <main className="col-span-6 flex flex-col reveal" data-delay="2">
-           <CodeEditorPreview />
-           <TerminalPreview />
-         </main>
-         <aside className="col-span-3 border-l border-white/5 flex flex-col reveal" data-delay="3">
-           <AIChatPreview />
-         </aside>
-       </div>
-       <div className="flex items-center justify-between px-4 py-2 border-t border-white/5 text-[11px] font-mono text-ink-3 reveal" data-delay="4">
-         <div className="flex items-center gap-3">
-           <span className="flex items-center gap-1"><Icon name="git-branch" size={11} /> feat/checkout-v2</span>
-           <span className="flex items-center gap-1"><Icon name="circle-check" size={11} className="text-emerald-400" /> 0 errors</span>
-           <span>UTF-8 · LF · TypeScript</span>
-         </div>
-         <div className="flex items-center gap-3">
-           <span>Deva ⌘K</span>
-           <span>Ln 9, Col 24</span>
-         </div>
-       </div>
-     </div>
-   );
- }
-
-function AgentRow({ name, status, icon }) {
-  const tone = status === "working" ? "text-emerald-400" : status === "paused" ? "text-amber-400" : "text-ink-3";
-  return (
-    <div className="flex items-center gap-2 px-2 py-1.5 rounded-md hover:bg-white/[0.04]">
-      <Icon name={icon} size={13} className="text-ink-2" />
-      <span className="text-xs text-ink-2 flex-1">{name}</span>
-      <span className={`text-[10px] font-mono ${tone}`}>{status}</span>
-    </div>
-  );
-}
-
-function AgentsPanel() {
-  const agents = [
-    { n: "Builder",  r: "Implements features end-to-end", c: "84%", s: "working", i: "hammer", tasks: ["Refactor cart store", "Wire Stripe v3", "Add idempotency"] },
-    { n: "Reviewer", r: "Reads diffs and writes feedback",  c: "12%", s: "idle",    i: "shield-check", tasks: ["Review PR #142", "Lint check"] },
-    { n: "Debugger", r: "Finds and fixes regressions",      c: "—",   s: "paused",  i: "bug", tasks: ["Replay session 8af"] },
-    { n: "Planner",  r: "Drafts plans and estimates",       c: "—",   s: "idle",    i: "compass", tasks: ["Sprint 14 outline"] },
+function AnalyticsPanel() {
+  const stats = [
+    { n: "84%", l: "resolution rate" },
+    { n: "2.1m", l: "total calls" },
+    { n: "4.2/5", l: "satisfaction" },
   ];
   return (
-    <div className="glass-strong rounded-3xl ring-aurora p-6 md:p-8">
-      <div className="grid md:grid-cols-2 gap-4">
-        {agents.map((a) => (
-          <TiltCard key={a.n} className="glass rounded-2xl p-5">
-            <div className="flex items-start justify-between">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl glass-strong flex items-center justify-center text-violet">
-                  <Icon name={a.i} size={18} />
-                </div>
-                <div>
-                   <div className="font-display text-lg font-bold">{a.n}</div>
-                  <div className="text-ink-3 text-xs">{a.r}</div>
-                </div>
-              </div>
-              <span className={`text-[11px] font-mono px-2 py-1 rounded-full ${
-                a.s === "working" ? "bg-emerald-400/10 text-emerald-300" :
-                a.s === "paused"  ? "bg-amber-400/10 text-amber-300" :
-                                    "bg-white/5 text-ink-3"
-              }`}>{a.s}</span>
-            </div>
-            <div className="mt-5 h-1.5 rounded-full bg-white/5 overflow-hidden">
-              <div
-                className="h-full"
-                style={{
-                  width: a.c === "—" ? "0%" : a.c,
-                  background: "linear-gradient(90deg,#4f7cff,#9d5cff,#22d3ee)",
-                }}
-              />
-            </div>
-            <ul className="mt-4 space-y-1.5 text-sm text-ink-2">
-              {a.tasks.map((t) => (
-                <li key={t} className="flex items-center gap-2">
-                  <Icon name="dot" size={14} className="text-ink-3" />
-                  {t}
-                </li>
-              ))}
-            </ul>
-          </TiltCard>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function MemoryPanel() {
-  const memories = [
-    { t: "Repo conventions", d: "Always uses Zod for validation; prefers server actions over API routes.", k: "code" },
-    { t: "Team rituals",     d: "PRs require 2 reviewers; deploys go Tuesdays at 10am PT.",                k: "users" },
-    { t: "Design tokens",    d: "Brand uses Inter Tight, --blue #4f7cff, 12px base radius.",               k: "palette" },
-    { t: "Past decisions",   d: "Migrated from Prisma to Drizzle Q1 — keep both adapters thin.",           k: "history" },
-  ];
-  return (
-    <div className="glass-strong rounded-3xl ring-aurora p-6 md:p-10">
-      <div className="grid md:grid-cols-2 gap-8 items-center">
-        <div>
-          <div className="text-[10px] uppercase tracking-widest text-ink-3 mb-3">AI Memory</div>
-           <h3 className="font-display text-3xl font-bold text-grad leading-tight">A mind that grows with your team.</h3>
-          <p className="mt-4 text-ink-2 leading-relaxed">
-            hiDeva remembers your codebase, your conventions, and your decisions — so every agent
-            you spin up starts already fluent in your context.
-          </p>
-          <div className="mt-6 grid grid-cols-3 gap-3 text-center">
-            <Stat n="14k" l="memories" />
-            <Stat n="38" l="repos" />
-            <Stat n="0.2s" l="recall" />
+    <div className="glass-strong rounded-3xl ring-aurora p-8">
+      <div className="text-[10px] uppercase tracking-widest text-ink-3 mb-3">Analytics Dashboard</div>
+      <h3 className="font-display text-3xl font-bold text-grad mb-6">Data-driven insights.</h3>
+      <p className="text-ink-2 mb-8">Track performance and identify opportunities.</p>
+      <div className="grid grid-cols-3 gap-4">
+        {stats.map((s) => (
+          <div key={s.l} className="glass rounded-xl py-4 text-center">
+            <div className="font-display text-2xl font-bold text-aurora">{s.n}</div>
+            <div className="text-ink-3 text-xs uppercase tracking-widest mt-1">{s.l}</div>
           </div>
-        </div>
-        <div className="space-y-3">
-          {memories.map((m, i) => (
-            <div key={m.t} className="glass rounded-2xl p-4 flex items-start gap-3">
-              <div className="w-9 h-9 shrink-0 rounded-xl glass-strong flex items-center justify-center text-cyan">
-                <Icon name={m.k} size={16} />
-              </div>
-              <div>
-                <div className="text-ink font-medium text-sm">{m.t}</div>
-                <div className="text-ink-2 text-sm mt-0.5 leading-snug">{m.d}</div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-function Stat({ n, l }) {
-  return (
-    <div className="glass rounded-xl py-3">
-       <div className="font-display text-2xl font-bold text-aurora">{n}</div>
-      <div className="text-ink-3 text-xs uppercase tracking-widest mt-1">{l}</div>
-    </div>
-  );
-}
-
-function DeployPanel() {
-  const steps = [
-    { t: "build",   s: "ok", l: "32s" },
-    { t: "test",    s: "ok", l: "1m 12s" },
-    { t: "preview", s: "ok", l: "8s" },
-    { t: "deploy",  s: "live", l: "12s" },
-  ];
-  return (
-    <div className="glass-strong rounded-3xl ring-aurora p-6 md:p-10">
-      <div className="flex flex-wrap items-end justify-between gap-4 mb-8">
-        <div>
-          <div className="text-[10px] uppercase tracking-widest text-ink-3 mb-2">Deploy</div>
-           <h3 className="font-display text-2xl font-bold">acme-checkout · production</h3>
-          <p className="text-ink-2 text-sm mt-1">Triggered by Deva · 2 min ago · build #1402</p>
-        </div>
-        <a href="#" className="btn btn-ghost text-sm">Open dashboard <Icon name="external-link" size={13} /></a>
-      </div>
-      <div className="grid md:grid-cols-4 gap-3">
-        {steps.map((s) => (
-          <div key={s.t} className="glass rounded-2xl p-4">
-            <div className="flex items-center justify-between">
-              <div className="text-ink-2 text-sm">{s.t}</div>
-              <span className={`w-2 h-2 rounded-full ${
-                s.s === "live" ? "bg-emerald-400 shadow-[0_0_12px] shadow-emerald-400" : "bg-emerald-400"
-              }`} />
-            </div>
-            <div className="mt-3 font-display text-xl font-bold">{s.l}</div>
-            <div className="mt-3 h-1 rounded-full bg-white/5 overflow-hidden">
-              <div className="h-full w-full" style={{ background: "linear-gradient(90deg,#22d3ee,#4f7cff)" }} />
-            </div>
-          </div>
-        ))}
-      </div>
-      <div className="mt-8 glass rounded-2xl p-5">
-        <div className="flex items-center gap-2 text-emerald-300 text-sm">
-          <Icon name="check-circle-2" size={15} />
-          Deployed to <span className="font-mono text-ink">acme-checkout.hideva.com</span>
-        </div>
-        <div className="mt-3 grid md:grid-cols-4 gap-4 text-sm">
-          <div><div className="text-ink-3 text-xs">Region</div><div className="text-ink">iad1 · cdg1</div></div>
-          <div><div className="text-ink-3 text-xs">Avg TTFB</div><div className="text-ink">38ms</div></div>
-          <div><div className="text-ink-3 text-xs">Lighthouse</div><div className="text-ink">98 / 100 / 100</div></div>
-          <div><div className="text-ink-3 text-xs">Errors (24h)</div><div className="text-ink">0</div></div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function IntegrationPanel() {
-   const integrations = [
-     { n: "Supabase", d: "Database & Auth", i: "database", c: "emerald-400" },
-     { n: "Vercel",   d: "Deployments",   i: "globe",     c: "blue"      },
-   ];
-   return (
-     <div className="glass-strong rounded-3xl ring-aurora p-6 md:p-10">
-       <div className="text-[10px] uppercase tracking-widest text-ink-3 mb-3 reveal">Integrations</div>
-       <h3 className="font-display text-3xl font-bold text-grad reveal" data-delay="1">Connect your stack.</h3>
-       <p className="mt-4 text-ink-2 leading-relaxed max-w-xl reveal" data-delay="2">
-         One-click integrations for Supabase databases, Vercel deployments, and more.
-         All state syncs automatically across agents.
-       </p>
-       <div className="mt-8 grid md:grid-cols-2 gap-4">
-         {integrations.map((int, idx) => (
-           <TiltCard key={int.n} className="glass rounded-2xl p-5 flex items-center gap-4 reveal" data-delay={idx + 1}>
-             <div className={"w-12 h-12 rounded-xl flex items-center justify-center text-" + int.c}>
-               <Icon name={int.i} size={24} />
-             </div>
-            <div>
-              <div className="font-display font-bold">{int.n}</div>
-              <div className="text-ink-2 text-sm">{int.d}</div>
-            </div>
-          </TiltCard>
         ))}
       </div>
     </div>
@@ -668,15 +413,15 @@ function IntegrationPanel() {
 }
 
 /* ========================================================
-   WHY hiDeva
-======================================================== */
+   WHY hiDeva CALL ASSISTANT
+======================================================= */
 const WHYS = [
-  { i: "rocket",       n: "10× faster shipping",    d: "Agents draft, review, and merge PRs while you stay in flow. Your CI becomes your coworker." },
-  { i: "brain-circuit",n: "Understands your codebase", d: "Repo-wide context, conventions, and past decisions — baked in, not pasted in." },
-  { i: "layers",       n: "One workspace, not five",  d: "Stop paying for six tools that don't talk to each other." },
-  { i: "shield",       n: "Secure by default",       d: "SOC 2 Type II. End-to-end encryption. Isolated agent sandboxes. Your code never trains our models." },
-  { i: "monitor-smartphone", n: "Actually cross-platform", d: "Mac, Windows, Linux, web, iPad — same workspace, same state, no 'works on my machine' excuses." },
-  { i: "zap",          n: "Fast enough to feel instant", d: "Local-first cache. Sub-50ms keystrokes even when you're deploying from a coffee shop." },
+  { i: "clock", n: "24/7 Availability", d: "Never miss a call. The AI answers around the clock with zero wait time." },
+  { i: "phone", n: "Natural Conversations", d: "Human-like dialogue that understands context and handles interruptions gracefully." },
+  { i: "zap", n: "Instant Setup", d: "Connect your phone number in minutes. No infrastructure to manage." },
+  { i: "shield", n: "Enterprise Security", d: "End-to-end encryption, role-based access, SOC 2 compliant." },
+  { i: "globe", n: "Multi-language", d: "Support for 20+ languages with live translation capabilities." },
+  { i: "workflow", n: "Full Automation", d: "From call to action — bookings, payments, tickets, all handled." },
 ];
 function Why() {
   return (
@@ -684,8 +429,7 @@ function Why() {
       <div className="relative mx-auto max-w-6xl px-5">
         <SectionHead
           eyebrow="Why hiDeva"
-          title="The advantages compound."
-          sub="A workspace built around autonomous agents — not bolted on after the fact. Every feature reinforces the others."
+          title="Calls that work for you."
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {WHYS.map((w, i) => (
@@ -709,12 +453,10 @@ function Why() {
    WORKFLOW TIMELINE
 ======================================================== */
 const STEPS = [
-  { n: "Idea",    i: "lightbulb",    d: "Type a prompt, paste a ticket, or point at a bug. Deva figures out what you actually want." },
-  { n: "Plan",    i: "list-checks",  d: "Review the steps, scope, and estimates before any code gets touched. Reject, reorder, or approve." },
-  { n: "Build",   i: "hammer",       d: "Agents implement in parallel with safe, reviewable diffs. You stay in the loop, not out of it." },
-  { n: "Debug",   i: "bug",          d: "Replay sessions, trace failures, and let agents propose fixes that don't introduce new bugs." },
-  { n: "Deploy",  i: "rocket",       d: "Preview environments and zero-downtime production rollouts. Ship Tuesday, not 'next quarter'." },
-  { n: "Improve", i: "trending-up",  d: "Telemetry feeds back into memory. Every deployment makes the next one faster." },
+  { n: "Connect", i: "phone", d: "Link your phone number or get a new one instantly." },
+  { n: "Configure", i: "settings", d: "Set up knowledge base, workflows, and business hours." },
+  { n: "Deploy", i: "rocket", d: "AI goes live and starts handling calls immediately." },
+  { n: "Learn", i: "bar-chart-3", d: "Analytics and insights help optimize performance." },
 ];
 function Workflow() {
   return (
@@ -723,10 +465,9 @@ function Workflow() {
       <div className="relative mx-auto max-w-6xl px-5">
         <SectionHead
           eyebrow="The workflow"
-          title="From idea to production."
-          sub="Every agent step is observable, reversible, and shaped by your team's history. No black boxes."
+          title="From setup to autopilot."
+          sub="Get your AI call assistant running in minutes."
         />
-        {/* Horizontal pipeline (desktop) */}
         <div className="hidden md:block relative">
           <svg className="absolute top-[36px] left-0 w-full h-2" viewBox="0 0 1200 8" preserveAspectRatio="none">
             <defs>
@@ -739,7 +480,7 @@ function Workflow() {
             <line x1="0" y1="4" x2="1200" y2="4" stroke="url(#pipeg)" strokeWidth="2" strokeLinecap="round" opacity=".12" />
             <line x1="0" y1="4" x2="1200" y2="4" stroke="url(#pipeg)" strokeWidth="2" strokeLinecap="round" className="dash-flow" />
           </svg>
-          <div className="grid grid-cols-6 relative">
+          <div className="grid grid-cols-4 relative">
             {STEPS.map((s, i) => (
               <div key={s.n} className="flex flex-col items-center text-center px-2 reveal" data-delay={i}>
                 <div className={`relative w-[72px] h-[72px] rounded-2xl flex items-center justify-center mb-5 ${i % 2 === 0 ? 'glass-strong grad-border' : 'bg-white/[0.03] border border-white/10'}`}>
@@ -752,7 +493,6 @@ function Workflow() {
             ))}
           </div>
         </div>
-        {/* Vertical (mobile) */}
         <div className="md:hidden space-y-4">
           {STEPS.map((s, i) => (
             <div key={s.n} className="flex gap-4 reveal">
@@ -775,18 +515,18 @@ function Workflow() {
    TESTIMONIALS
 ======================================================== */
 const TESTIMONIALS = [
-  { n: "Sarah Chen", r: "Staff Eng · Linear",  a: "SC", c: "violet",
-    q: "We cut our review cycle from 4 days to same-day. The agents catch things humans miss — and they don't get tired.", s: 5 },
-  { n: "Marcus Webb",  r: "CTO · Raycast",           a: "MW", c: "blue",
-    q: "Memory is the feature everyone sleeps on until they try it. Then they can't imagine going back.", s: 5 },
-  { n: "Priya Nair",  r: "Founder · Resend",   a: "PN", c: "cyan",
-    q: "Built our entire checkout flow in a weekend. Solo. The agents handled the Stripe integration while I slept.", s: 5 },
-  { n: "Tomás Ruiz",  r: "Eng Lead · Supabase",     a: "TR", c: "violet",
-    q: "Voice mode during design reviews is surprisingly good. We do them while walking the dog now.", s: 5 },
-  { n: "Aisha Patel",   r: "Principal · Figma", a: "AP", c: "blue",
-    q: "Replayable sessions changed how we debug. No more 'it worked on my branch' — just replay and see.", s: 5 },
-  { n: "Jake Moreau", r: "PM · Notion",        a: "JM", c: "cyan",
-    q: "Spec → plan → preview is a real loop now. PMs can actually review before engineers write a single line.", s: 4 },
+  { n: "Dr. Sarah Kim", r: "Clinic Director · HealthFirst", a: "SK", c: "violet",
+    q: "We went from 30% missed calls to zero. Patients love the 24/7 availability and we saved 15 hours a week.", s: 5 },
+  { n: "Raj Patel", r: "CEO · TechSolutions", a: "RP", c: "blue",
+    q: "The outbound survey feature increased our NPS by 23 points. Setup took less than an hour.", s: 5 },
+  { n: "Maria Santos", r: "Support Lead · RetailCorp", a: "MS", c: "cyan",
+    q: "Reduced our call handling time by 60% while improving customer satisfaction. The CRM integration is seamless.", s: 5 },
+  { n: "James Liu", r: "Practice Manager · LawFirm", a: "JL", c: "violet",
+    q: "Multi-language support helped us serve our Spanish-speaking clients better. Receptionist Agent handles intake perfectly.", s: 5 },
+  { n: "Anika Rao", r: "Director · EduCenter", a: "AR", c: "blue",
+    q: "Parent inquiries are now handled instantly. The appointment scheduling saved our staff hours of back-and-forth emails.", s: 5 },
+  { n: "Tom Bradley", r: "Operations · LogisticsPro", a: "TB", c: "cyan",
+    q: "Order confirmations and delivery updates are fully automated. 40% reduction in customer service calls.", s: 5 },
 ];
 function Testimonials() {
   return (
@@ -794,9 +534,8 @@ function Testimonials() {
       <div className="aurora-stage opacity-40"><div className="aurora-blob b3" /></div>
       <div className="relative mx-auto max-w-6xl px-5">
         <SectionHead
-          eyebrow="Loved by builders"
-          title="Teams ship more, sleep more."
-          sub="Real people, real teams, real results. No stock photos, no fake quotes."
+          eyebrow="Trusted by businesses"
+          title="Teams save hours, customers get better service."
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {TESTIMONIALS.map((t, i) => (
@@ -836,22 +575,24 @@ function Testimonials() {
 ======================================================== */
 const PLANS = [
   {
-    n: "Free", p: "$0", per: "forever",
-    d: "For solo devs and side projects. No time limits.",
-    f: ["1 agent at a time", "5 repos · 200 messages / mo", "Community support", "Local-first sync"],
+    n: "Starter", p: "$0", per: "forever",
+    d: "For small businesses and solo professionals.",
+    f: ["1 phone number", "100 minutes/month", "Basic knowledge base", "Email support"],
     cta: "Start free",
+    featured: false,
   },
   {
-    n: "Pro", p: "$19", per: "per user / month", featured: true,
-    d: "For teams shipping real software.",
-    f: ["Unlimited agents", "Unlimited repos · unlimited memory", "Voice & desktop apps", "PR reviews + session replay", "Priority support"],
-    cta: "Start Pro trial",
+    n: "Professional", p: "$49", per: "per user / month", featured: true,
+    d: "For growing teams with higher volume needs.",
+    f: ["Unlimited phone numbers", "Unlimited minutes", "Advanced workflows", "CRM integration", "Priority support"],
+    cta: "Start trial",
   },
   {
     n: "Enterprise", p: "Custom", per: "talk to sales",
-    d: "For orgs that need compliance and control.",
-    f: ["SSO/SAML · SCIM", "VPC & on-prem deploy", "Custom model routing", "SOC 2 · HIPAA · ISO 27001", "Dedicated CSM"],
+    d: "For large organizations with compliance requirements.",
+    f: ["White-label deploy", "SOC 2 / HIPAA", "Custom integrations", "Dedicated CSM", "SLA guarantees"],
     cta: "Contact sales",
+    featured: false,
   },
 ];
 function Pricing() {
@@ -862,7 +603,7 @@ function Pricing() {
         <SectionHead
           eyebrow="Pricing"
           title="Simple plans. No surprises."
-          sub="Free for solo devs. Predictable per-seat for teams. Custom for enterprises with serious requirements."
+          sub="Free for small businesses. Predictable pricing for teams. Custom for enterprises."
         />
         <div className="flex justify-center mb-12 reveal">
           <div className="glass-strong rounded-full p-1 flex text-sm">
@@ -881,7 +622,7 @@ function Pricing() {
         </div>
         <div className="grid md:grid-cols-3 gap-5">
           {PLANS.map((p, i) => {
-            const price = p.p === "$19" && !yearly ? "$24" : p.p;
+            const price = p.p === "$49" && !yearly ? "$59" : p.p;
             const bgClass = i === 0 ? "glass" : i === 1 ? "glass-strong grad-border ring-aurora" : "glass";
             return (
               <div
@@ -928,22 +669,18 @@ function Pricing() {
    FAQ
 ======================================================== */
 const FAQS = [
-  { q: "What makes hiDeva different from Copilot or Cursor?",
-    a: "Those are autocomplete and chat overlays. hiDeva is a full workspace where autonomous agents read your entire repo, remember past decisions, and ship code through the same review process your team already uses." },
-  { q: "Which models do the agents use?",
-    a: "We route across frontier models — Claude, GPT-4, and our own fine-tuned specialists for code. Enterprise plans support BYOK and VPC deployment." },
-  { q: "Is my code used to train models?",
-    a: "No. Your code, prompts, and memories stay yours. We're SOC 2 Type II audited and we never train on customer data." },
-  { q: "Can I use hiDeva with my existing editor?",
-    a: "Yes. Native apps for macOS, Windows, Linux, and web. Extensions for VS Code, JetBrains, and Neovim that share the same agent state." },
-  { q: "How does pricing work?",
-    a: "Free for solo devs. Pro is $19/seat/month billed annually ($24 monthly). Enterprise is custom — includes SSO, VPC, and a dedicated CSM." },
-  { q: "Do you have a free trial?",
-    a: "Pro includes a 14-day trial, no credit card required. The Free plan is permanently free — no time limits, no feature gating." },
-  { q: "What about working offline?",
-    a: "hiDeva is local-first. The editor, terminal, and memory cache all work offline. Agents pick up where they left off when you reconnect." },
-  { q: "How do I migrate from another tool?",
-    a: "Point hiDeva at a repo and it indexes automatically. One-click importers for Cursor sessions, Linear tickets, and Notion docs are in beta." },
+  { q: "How does the AI handle phone calls?",
+    a: "The platform uses low-latency speech recognition and synthesis to enable real-time conversations. The AI understands intent, retrieves relevant knowledge, and executes workflows during calls." },
+  { q: "Which phone providers do you support?",
+    a: "We integrate with Twilio, Exotel, Plivo, and WhatsApp Business for global calling capabilities." },
+  { q: "Can I customize the AI's responses?",
+    a: "Yes. Upload your own knowledge base, set business rules, and configure workflows. You can also create custom AI personas for different departments." },
+  { q: "How accurate is the speech recognition?",
+    a: "We use frontier models with industry-leading accuracy. Multi-language support includes automatic accent adaptation for better recognition." },
+  { q: "What integrations are available?",
+    a: "Calendar (Google, Outlook, Apple), CRM (Salesforce, HubSpot, Zoho), and 20+ business tools including Slack, Gmail, and Stripe." },
+  { q: "Is my call data secure?",
+    a: "Yes. End-to-end encryption, SOC 2 compliance, and configurable data retention policies. Enterprise plans include HIPAA compliance." },
 ];
 function FAQ() {
   const [open, setOpen] = useS(0);
@@ -953,7 +690,6 @@ function FAQ() {
         <SectionHead
           eyebrow="FAQ"
           title="Questions, answered."
-          sub="The stuff people actually ask. Not the FAQ we wish they'd ask."
         />
         <div className="space-y-2 reveal">
           {FAQS.map((f, i) => {
@@ -995,27 +731,27 @@ function FinalCTA() {
         <div className="relative overflow-hidden rounded-4xl glass-strong p-10 md:p-16 text-center">
           <div className="aurora-stage opacity-60"><div className="aurora-blob b1" /><div className="aurora-blob b2" /><div className="aurora-blob b3" /></div>
           <div className="relative">
-            <span className="badge"><span className="dot" /> Beta · Limited seats</span>
+            <span className="badge"><span className="dot" /> Free trial · No credit card</span>
             <h2 className="mt-6 font-display text-4xl md:text-6xl font-bold text-grad leading-[1.05] max-w-3xl mx-auto">
-              Start building with agents today.
+              Transform your phone communications today.
             </h2>
             <p className="mt-5 text-ink-2 text-base md:text-lg max-w-xl mx-auto">
-              Free forever for solo developers. 14-day Pro trial for teams. No credit card required.
+              Start with 100 minutes free. Connect your phone number in minutes.
             </p>
             <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3">
               <a href="#" className="btn btn-primary px-6 py-3 text-[15px]">
-                Get started free
+                Start free trial
                 <Icon name="arrow-right" size={15} />
               </a>
-              <a href="#" className="btn btn-ghost px-6 py-3 text-[15px]">
-                <Icon name="book-open" size={14} />
-                View documentation
+              <a href="#showcase" className="btn btn-ghost px-6 py-3 text-[15px]">
+                <Icon name="play" size={14} />
+                Watch demo
               </a>
             </div>
             <div className="mt-12 grid grid-cols-3 gap-6 max-w-lg mx-auto text-center">
-              <Stat n="50k+" l="builders" />
-              <Stat n="2.4M" l="deploys" />
-              <Stat n="99.99%" l="uptime" />
+              <Stat n="24/7" l="availability" />
+              <Stat n="98%" l="satisfaction" />
+              <Stat n="40k+" l="calls" />
             </div>
           </div>
         </div>
@@ -1026,5 +762,5 @@ function FinalCTA() {
 
 /* ---------- expose ---------- */
 Object.assign(window, {
-  Hero, Features, Showcase, Why, Workflow, Testimonials, Pricing, FAQ, FinalCTA, IntegrationPanel,
+  Hero, Features, Showcase, Why, Workflow, Testimonials, Pricing, FAQ, FinalCTA, SnapshotsPanel,
 });

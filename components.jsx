@@ -457,7 +457,16 @@ function AIChatWidget() {
   );
 }
 
+function Stat({ n, l }) {
+  return (
+    <div className="glass rounded-xl py-3 text-center">
+      <div className="font-display text-2xl font-bold text-aurora">{n}</div>
+      <div className="text-ink-3 text-xs uppercase tracking-widest mt-1">{l}</div>
+    </div>
+  );
+}
+
 /* ---------- Expose to other babel scripts ---------- */
 Object.assign(window, {
-  Icon, Logo, SectionHead, TrustedBy, TiltCard, AuroraBG, useReveal, Nav, Footer, AuthModal, NewsletterSignup, AIChatWidget,
+  Icon, Logo, SectionHead, TrustedBy, TiltCard, AuroraBG, useReveal, Nav, Footer, AuthModal, NewsletterSignup, AIChatWidget, Stat,
 });
