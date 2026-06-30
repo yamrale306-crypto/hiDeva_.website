@@ -80,6 +80,14 @@
     </div>
   </div>
   <div id="root"></div>
+  <script>
+    setTimeout(function() {
+      var intro = document.getElementById('intro-overlay');
+      if (intro) {
+        intro.classList.add('hidden');
+      }
+    }, 4500);
+  </script>
 
 <script type="text/babel" src="components.jsx"></script>
    <script type="text/babel" src="sections.jsx"></script>

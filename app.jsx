@@ -1,8 +1,6 @@
-const { useState, useEffect } = React;
+const { useState } = React;
 
 function App() {
-   const [introDone, setIntroDone] = useState(false);
-   
    useReveal();
    useSmoothScroll();
    const [toast, setToast] = useState(null);
@@ -13,28 +11,8 @@ function App() {
    
    const closeToast = () => setToast(null);
    
-  useEffect(() => {
-     const timer = setTimeout(() => {
-       setIntroDone(true);
-     }, 4500);
-     return () => clearTimeout(timer);
-   }, []);
-   
    return (
      <>
-       {!introDone && (
-         <div id="intro-overlay" className="intro-overlay">
-           <div className="intro-content">
-             <div className="intro-logo">
-               <span className="intro-logo-text">hi<span className="text-aurora">Deva</span></span>
-             </div>
-             <div className="intro-loader">
-               <div className="intro-loader-bar"></div>
-             </div>
-             <p className="intro-tagline">AI-Powered Call Assistant</p>
-           </div>
-         </div>
-       )}
        <Nav />
        {toast && <Toast message={toast} onClose={closeToast} />}
        <main>
