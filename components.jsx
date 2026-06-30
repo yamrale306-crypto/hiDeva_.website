@@ -140,23 +140,23 @@ function AuroraBG({ withGrid = true }) {
 
 /* ---------- Scroll reveal ---------- */
 function useReveal() {
-  useEffect(() => {
-    const els = document.querySelectorAll(".reveal");
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add("in");
-            io.unobserve(e.target);
-          }
-        });
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -60px 0px" }
-    );
-    els.forEach((el) => io.observe(el));
-    return () => io.disconnect();
-  });
-}
+   useEffect(() => {
+     const els = document.querySelectorAll(".reveal");
+     const io = new IntersectionObserver(
+       (entries) => {
+         entries.forEach((e) => {
+           if (e.isIntersecting) {
+             e.target.classList.add("in");
+             io.unobserve(e.target);
+           }
+         });
+       },
+       { threshold: 0.12, rootMargin: "0px 0px -60px 0px" }
+     );
+     els.forEach((el) => io.observe(el));
+     return () => io.disconnect();
+   }, []);
+ }
 
 /* ---------- Nav ---------- */
 function Nav() {
@@ -318,12 +318,20 @@ function Footer() {
 
 /* ---------- Auth Modal ---------- */
 function AuthModal({ open, onClose, initialMode = "signup" }) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [mode, setMode] = useState(initialMode);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-  const [success, setSuccess] = useState(false);
+   const [email, setEmail] = useState("");
+   const [password, setPassword] = useState("");
+   const [mode, setMode] = useState(initialMode);
+   const [loading, setLoading] = useState(false);
+   const [error, setError] = useState("");
+   const [success, setSuccess] = useState(false);
+   useEffect(() => {
+     if (!open) {
+       setEmail("");
+       setPassword("");
+       setError("");
+       setSuccess(false);
+     }
+   }, [open]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

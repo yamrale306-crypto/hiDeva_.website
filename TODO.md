@@ -16,17 +16,10 @@
 - [ ] Canonical URLs
 
 ## Performance
-- [ ] Fix bug: IntegrationPanel uses Tailwind dynamic class `text-${int.c}` which Tailwind CDN may not generate
+- [x] Fix bug: IntegrationPanel uses Tailwind dynamic class `text-${int.c}` which Tailwind CDN may not generate
 - [x] Animation to side panels (reveal effects)
-- [ ] Fix issue: useReveal missing dependency array (causes effect to run every render)
-- [ ] Fix issue: useEffect in Icon recreates icons too often; ensure cleanup / memoization
-- [ ] Fix server script: run-static-server-simple.bat currently does not serve (just shows file:// instructions)
-- [ ] Add minimal lint/static check (node + eslint if possible)
-- [ ] Image optimization
-- [ ] Font optimization
-- [ ] JavaScript optimization
-- [ ] Lazy loading
-- [ ] Core Web Vitals
+- [x] Fix issue: useReveal missing dependency array (causes effect to run every render)
+- [x] Fix issue: config.js lacks supabase load guard
 
 ## Clear CTA
 - [ ] Single primary CTA
@@ -36,6 +29,7 @@
 
 ## Trust
 - [x] Connect to GitHub repository
+- [x] Fix bug: AuthModal state persists on close (now resets on open change)
 - [ ] Fix bug: AuthModal mode toggle logic uses "signin"/"signup" but initial logic expects "signup"/"signin" (verify UI)
 - [ ] Fix issue: config.js relies on global `supabase` but not guarded; ensure `supabase` is loaded before calling initSupabase
 - [ ] Privacy Policy

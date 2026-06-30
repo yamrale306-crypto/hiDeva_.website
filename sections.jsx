@@ -653,7 +653,7 @@ function IntegrationPanel() {
        <div className="mt-8 grid md:grid-cols-2 gap-4">
          {integrations.map((int, idx) => (
            <TiltCard key={int.n} className="glass rounded-2xl p-5 flex items-center gap-4 reveal" data-delay={idx + 1}>
-             <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-${int.c}`}>
+             <div className={"w-12 h-12 rounded-xl flex items-center justify-center text-" + int.c}>
                <Icon name={int.i} size={24} />
              </div>
             <div>

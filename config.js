@@ -6,13 +6,21 @@ window.SUPABASE_CONFIG = {
 
 // Initialize Supabase client
 async function initSupabase() {
-  if (window.supabase) return window.supabase;
-  
-  const { createClient } = supabase;
-  const client = createClient(window.SUPABASE_CONFIG.url, window.SUPABASE_CONFIG.anonKey);
-  window.supabase = client;
-  return client;
-}
+   if (window.supabase) return window.supabase;
+   
+   // Wait for Supabase CDN to load
+   let retries = 0;
+   while (!window.supabase && typeof supabase === 'undefined' && retries < 50) {
+     await new Promise(r => setTimeout(r, 100));
+     retries++;
+   }
+   
+   if (!supabase) throw new Error('Supabase failed to load');
+   const { createClient } = supabase;
+   const client = createClient(window.SUPABASE_CONFIG.url, window.SUPABASE_CONFIG.anonKey);
+   window.supabase = client;
+   return client;
+ }
 
 // Simple auth helper
 window.auth = {
