@@ -1,0 +1,13 @@
+{
+  "name": "hideva",
+  "version": "1.0.0",
+  "description": "hiDeva - AI Employee for Phone Calls",
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "echo 'Static site - no build needed'",
+    "deploy": "vercel"
+  },
+  "devDependencies": {
+    "serve": "^14.0.0"
+  }
+}

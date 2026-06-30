@@ -158,6 +158,28 @@ function useReveal() {
    }, []);
  }
 
+ /* ---------- Smooth scroll ---------- */
+function useSmoothScroll() {
+   useEffect(() => {
+     const handleClick = (e) => {
+       const link = e.target.closest('a[href^="#"]');
+       if (!link) return;
+       
+       const href = link.getAttribute('href');
+       if (href === '#') return;
+       
+       const target = document.querySelector(href);
+       if (target) {
+         e.preventDefault();
+         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+       }
+     };
+     
+     document.addEventListener('click', handleClick);
+     return () => document.removeEventListener('click', handleClick);
+   }, []);
+ }
+
 /* ---------- Nav ---------- */
 function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -253,6 +275,17 @@ function Footer() {
     },
   ];
   const socials = ["github", "twitter", "linkedin", "youtube"];
+  
+  const handleSocialClick = (e, platform) => {
+    e.preventDefault();
+    window.showToast(`Opening ${platform}...`);
+  };
+  
+  const handleLinkClick = (e, link) => {
+    e.preventDefault();
+    window.showToast(`${link} page coming soon!`);
+  };
+  
   return (
     <footer className="relative mt-32 border-t border-white/5">
       <div className="aurora-stage opacity-50">
@@ -271,6 +304,7 @@ function Footer() {
                     key={s}
                     href="#"
                     aria-label={s}
+                    onClick={(e) => handleSocialClick(e, s)}
                     className="w-9 h-9 rounded-lg glass flex items-center justify-center text-ink-2 hover:text-ink hover:bg-white/10 transition"
                   >
                     <Icon name={s} size={16} />
@@ -289,7 +323,7 @@ function Footer() {
                 <ul className="space-y-3">
                   {c.l.map((x) => (
                     <li key={x}>
-                      <a href="#" className="text-ink-2 text-sm hover:text-ink transition">
+                      <a href="#" onClick={(e) => handleLinkClick(e, x)} className="text-ink-2 text-sm hover:text-ink transition">
                         {x}
                       </a>
                     </li>
@@ -302,10 +336,10 @@ function Footer() {
         <div className="mt-16 pt-6 border-t border-white/5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <p className="text-ink-3 text-xs">© 2026 hiDeva Labs, Inc. All rights reserved.</p>
           <div className="flex items-center gap-5 text-xs text-ink-3">
-            <a href="#" className="hover:text-ink">Privacy</a>
-            <a href="#" className="hover:text-ink">Terms</a>
-            <a href="#" className="hover:text-ink">Cookies</a>
-            <a href="#" className="hover:text-ink">DPA</a>
+            <a href="#" onClick={(e) => handleLinkClick(e, 'Privacy')} className="hover:text-ink">Privacy</a>
+            <a href="#" onClick={(e) => handleLinkClick(e, 'Terms')} className="hover:text-ink">Terms</a>
+            <a href="#" onClick={(e) => handleLinkClick(e, 'Cookies')} className="hover:text-ink">Cookies</a>
+            <a href="#" onClick={(e) => handleLinkClick(e, 'DPA')} className="hover:text-ink">DPA</a>
             <span className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
               All systems operational
@@ -467,7 +501,25 @@ function Stat({ n, l }) {
   );
 }
 
+/* ---------- Toast Notification ---------- */
+function Toast({ message, onClose }) {
+  useEffect(() => {
+    const timer = setTimeout(onClose, 3000);
+    return () => clearTimeout(timer);
+  }, [onClose]);
+
+  return (
+    <div className="fixed bottom-6 left-6 z-50 glass-strong rounded-xl px-4 py-3 flex items-center gap-3 animate-slide-up">
+      <Icon name="info" size={16} className="text-cyan" />
+      <span className="text-sm text-ink">{message}</span>
+      <button onClick={onClose} className="text-ink-3 hover:text-ink">
+        <Icon name="x" size={14} />
+      </button>
+    </div>
+  );
+}
+
 /* ---------- Expose to other babel scripts ---------- */
 Object.assign(window, {
-  Icon, Logo, SectionHead, TrustedBy, TiltCard, AuroraBG, useReveal, Nav, Footer, AuthModal, NewsletterSignup, AIChatWidget, Stat,
+  Icon, Logo, SectionHead, TrustedBy, TiltCard, AuroraBG, useReveal, useSmoothScroll, Nav, Footer, AuthModal, NewsletterSignup, AIChatWidget, Stat, Toast,
 });

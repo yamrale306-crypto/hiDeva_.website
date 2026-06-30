@@ -59,10 +59,10 @@ function Hero() {
               Get started free
               <Icon name="arrow-right" size={15} />
             </a>
-            <a href="#showcase" className="btn btn-ghost px-6 py-3.5 text-[15px]">
+            <button onClick={() => window.showToast('Demo video coming soon!')} className="btn btn-ghost px-6 py-3.5 text-[15px]">
               <Icon name="play" size={14} />
               Watch the demo
-            </a>
+            </button>
           </div>
 
           <p className="mt-6 text-ink-3 text-xs reveal" data-delay="4">
@@ -739,14 +739,14 @@ function FinalCTA() {
               Start with 100 minutes free. Connect your phone number in minutes.
             </p>
             <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3">
-              <a href="#" className="btn btn-primary px-6 py-3 text-[15px]">
+              <button onClick={() => window.showToast('Starting your free trial! Redirecting...')} className="btn btn-primary px-6 py-3 text-[15px]">
                 Start free trial
                 <Icon name="arrow-right" size={15} />
-              </a>
-              <a href="#showcase" className="btn btn-ghost px-6 py-3 text-[15px]">
+              </button>
+              <button onClick={() => window.showToast('Demo video coming soon!')} className="btn btn-ghost px-6 py-3 text-[15px]">
                 <Icon name="play" size={14} />
                 Watch demo
-              </a>
+              </button>
             </div>
             <div className="mt-12 grid grid-cols-3 gap-6 max-w-lg mx-auto text-center">
               <Stat n="24/7" l="availability" />
