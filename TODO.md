@@ -35,6 +35,7 @@
 - [ ] Reduced distractions
 
 ## Trust
+- [x] Connect to GitHub repository
 - [ ] Fix bug: AuthModal mode toggle logic uses "signin"/"signup" but initial logic expects "signup"/"signin" (verify UI)
 - [ ] Fix issue: config.js relies on global `supabase` but not guarded; ensure `supabase` is loaded before calling initSupabase
 - [ ] Privacy Policy
