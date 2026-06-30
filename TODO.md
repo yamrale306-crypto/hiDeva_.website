@@ -1,7 +1,7 @@
 # TODO — hiDeva Call Assistant
 
 ## Analytics
-- [ ] Fix duplicate/conflicting React components files (remove unused variants)
+- [x] Fix duplicate/conflicting React components files (remove unused variants)
 - [ ] Event tracking (CTA clicks, form submissions)
 - [ ] Google Analytics 4
 - [ ] Google Search Console
@@ -30,8 +30,7 @@
 ## Trust
 - [x] Connect to GitHub repository
 - [x] Fix bug: AuthModal state persists on close (now resets on open change)
-- [ ] Fix bug: AuthModal mode toggle logic uses "signin"/"signup" but initial logic expects "signup"/"signin" (verify UI)
-- [ ] Fix issue: config.js relies on global `supabase` but not guarded; ensure `supabase` is loaded before calling initSupabase
+- [x] Fix issue: config.js relies on global `supabase` but not guarded; ensure `supabase` is loaded before calling initSupabase
 - [ ] Privacy Policy
 - [ ] Terms of Service
 - [ ] Contact page
