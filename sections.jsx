@@ -1059,10 +1059,10 @@ function Industries() {
    CONTACT
 ======================================================== */
 const CONTACT = [
-  { i: "mail", n: "Email Us", d: "support@hideva.com", href: "mailto:support@hideva.com" },
-  { i: "phone", n: "Call Us", d: "+1 (855) 444-3382", href: "tel:+18554443382" },
+  { i: "mail", n: "Email Us", d: "yamrale306@gmail.com", href: "mailto:yamrale306@gmail.com" },
+  { i: "phone", n: "Call Us", d: "+91 9067696255", href: "tel:+919067696255" },
+  { i: "instagram", n: "Instagram", d: "@devradx_.09", href: "https://instagram.com/devradx_.09" },
   { i: "message-circle", n: "Live Chat", d: "Available 24/7 with AI assistant", href: "https://hideva.vercel.app/#" },
-  { i: "map-pin", n: "Office", d: "San Francisco, CA", href: "https://maps.google.com" },
 ];
 function Contact() {
   return (
