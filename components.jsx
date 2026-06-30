@@ -173,6 +173,7 @@ function Nav() {
     ["Workspace", "#showcase"],
     ["Workflow", "#workflow"],
     ["Pricing", "#pricing"],
+    ["Contact", "#contact"],
     ["Docs", "#faq"],
   ];
   return (
@@ -236,7 +237,7 @@ function Footer() {
   const cols = [
     {
       h: "Product",
-      l: ["Features", "Workspace", "Pricing", "Changelog", "Roadmap"],
+      l: ["Features", "Workspace", "Pricing", "Changelog", "Contact"],
     },
     {
       h: "Developers",

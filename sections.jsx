@@ -8,9 +8,9 @@ function Hero() {
   const [typed, setTyped] = useS("");
   const phrases = useM(
     () => [
-      "Automate every phone call with AI.",
-      "Your AI employee answers 24/7.",
-      "Never miss another call.",
+      "Your AI employee for phone calls.",
+      "Automate inbound and outbound communications.",
+      "Transform calls into business intelligence.",
     ],
     []
   );
@@ -47,11 +47,11 @@ function Hero() {
             <span className="block">
               <span className="caret">{typed}</span>
             </span>
-            <span className="block text-aurora mt-4">Transform phone calls into intelligent business interactions.</span>
+            <span className="block text-aurora mt-4">The AI employee that handles your phone calls.</span>
           </h1>
 
           <p className="mt-8 text-ink-2 text-lg md:text-xl max-w-2xl leading-relaxed reveal" data-delay="2">
-            hiDeva Call Assistant is an enterprise-grade AI voice platform that automates inbound and outbound phone communications through natural, human-like conversations.
+            Enterprise-grade AI voice platform combining advanced speech intelligence, LLMs, workflow automation, and business knowledge retrieval to function as a complete AI employee.
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row items-center gap-3 reveal" data-delay="3">
@@ -760,7 +760,337 @@ function FinalCTA() {
   );
 }
 
+/* ========================================================
+   VISION & MISSION
+======================================================== */
+function VisionMission() {
+  return (
+    <section className="relative py-28 overflow-hidden">
+      <div className="relative mx-auto max-w-6xl px-5">
+        <SectionHead
+          eyebrow="Our Purpose"
+          title="Empowering businesses with AI employees."
+          align="center"
+        />
+        <div className="grid md:grid-cols-2 gap-8">
+          <div className="glass-strong rounded-3xl p-8 reveal">
+            <div className="text-[10px] uppercase tracking-widest text-cyan mb-4">Mission</div>
+            <h3 className="font-display text-2xl font-bold text-ink mb-4">Every business deserves an AI employee.</h3>
+            <p className="text-ink-2 leading-relaxed">
+              Empower every business with an AI employee capable of handling phone conversations, performing business operations, and delivering exceptional customer experiences 24 hours a day.
+            </p>
+          </div>
+          <div className="glass-strong rounded-3xl p-8 reveal" data-delay="1">
+            <div className="text-[10px] uppercase tracking-widest text-violet mb-4">Vision</div>
+            <h3 className="font-display text-2xl font-bold text-ink mb-4">The operating system for AI-powered communication.</h3>
+            <p className="text-ink-2 leading-relaxed">
+              Become the operating system for AI-powered business communication—transforming every phone call into an intelligent, automated, and actionable business interaction.
+            </p>
+          </div>
+        </div>
+        <div className="mt-12 glass rounded-2xl p-8 reveal" data-delay="2">
+          <div className="text-[10px] uppercase tracking-widest text-ink-3 mb-6">Core Objectives</div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              "Automate voice communications",
+              "Reduce operational costs",
+              "Improve customer satisfaction",
+              "Eliminate missed calls",
+              "Integrate with existing systems",
+              "Support enterprise scale",
+              "Deliver natural conversations",
+              "Increase response speed"
+            ].map((obj, i) => (
+              <div key={i} className="flex items-start gap-2">
+                <Icon name="check" size={16} className="text-cyan mt-0.5 shrink-0" />
+                <span className="text-ink-2 text-sm">{obj}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ========================================================
+   INTEGRATIONS
+======================================================== */
+function Integrations() {
+  const categories = [
+    {
+      title: "Communication",
+      items: ["Exotel", "Twilio", "Plivo", "WhatsApp Business"],
+      icon: "phone"
+    },
+    {
+      title: "Productivity",
+      items: ["Gmail", "Outlook", "Slack", "Microsoft Teams", "Discord"],
+      icon: "mail"
+    },
+    {
+      title: "Business Tools",
+      items: ["Google Sheets", "Notion", "Jira", "GitHub", "Stripe", "Razorpay"],
+      icon: "briefcase"
+    },
+    {
+      title: "Meeting Platforms",
+      items: ["Zoom", "Google Meet", "Microsoft Teams"],
+      icon: "video"
+    }
+  ];
+
+  return (
+    <section className="relative py-28 overflow-hidden">
+      <div className="aurora-stage opacity-40"><div className="aurora-blob b1" /></div>
+      <div className="relative mx-auto max-w-6xl px-5">
+        <SectionHead
+          eyebrow="Integrations"
+          title="Connects with your entire stack."
+          sub="Seamlessly integrate with the tools your business already uses."
+        />
+        <div className="grid md:grid-cols-2 gap-6">
+          {categories.map((cat, i) => (
+            <div key={cat.title} className="glass-strong rounded-2xl p-6 reveal" data-delay={i + 1}>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-xl bg-blue/10 text-blue flex items-center justify-center">
+                  <Icon name={cat.icon} size={18} />
+                </div>
+                <h3 className="font-display text-lg font-bold text-ink">{cat.title}</h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {cat.items.map((item) => (
+                  <span key={item} className="px-3 py-1.5 rounded-lg glass text-ink-2 text-xs">
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ========================================================
+   SECURITY & COMPLIANCE
+======================================================== */
+function Security() {
+  const features = [
+    { i: "lock", n: "End-to-end encryption", d: "All calls and data encrypted in transit and at rest" },
+    { i: "user-round", n: "Role-based access", d: "Granular permissions for teams and organizations" },
+    { i: "smartphone", n: "Multi-factor auth", d: "Enhanced security with 2FA and SSO support" },
+    { i: "key", n: "API authentication", d: "Secure API keys with rotation and monitoring" },
+    { i: "file-search", n: "Audit logging", d: "Complete activity logs for compliance and debugging" },
+    { i: "shield-check", n: "SOC 2 compliant", d: "Enterprise-grade security standards" },
+  ];
+
+  return (
+    <section className="relative py-28 overflow-hidden">
+      <div className="relative mx-auto max-w-6xl px-5">
+        <SectionHead
+          eyebrow="Security & Compliance"
+          title="Enterprise-grade security you can trust."
+          sub="Built for organizations that demand the highest standards of data protection and regulatory compliance."
+        />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {features.map((f, i) => (
+            <TiltCard key={f.n} className="glass rounded-2xl p-6 reveal" data-delay={(i % 3) + 1}>
+              <div className="w-11 h-11 rounded-xl grad-border bg-white/[0.03] flex items-center justify-center text-aurora mb-4">
+                <Icon name={f.i} size={20} />
+              </div>
+              <h3 className="font-display text-lg font-bold text-ink mb-2">{f.n}</h3>
+              <p className="text-ink-2 text-sm leading-relaxed">{f.d}</p>
+            </TiltCard>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ========================================================
+   PRODUCT ROADMAP
+======================================================== */
+function Roadmap() {
+  const phases = [
+    {
+      phase: "Phase 1",
+      title: "Core Platform",
+      status: "Live",
+      items: [
+        "AI receptionist",
+        "Inbound calling",
+        "Speech recognition & synthesis",
+        "Call summaries",
+        "Knowledge base",
+        "Calendar integration"
+      ]
+    },
+    {
+      phase: "Phase 2",
+      title: "Business Automation",
+      status: "In Progress",
+      items: [
+        "CRM integrations",
+        "Workflow engine",
+        "Outbound calling",
+        "Analytics dashboard",
+        "Customer memory",
+        "Human handoff"
+      ]
+    },
+    {
+      phase: "Phase 3",
+      title: "Enterprise Intelligence",
+      status: "Coming Soon",
+      items: [
+        "Multi-agent collaboration",
+        "Autonomous workflows",
+        "Voice cloning",
+        "Real-time multilingual",
+        "Predictive insights"
+      ]
+    },
+    {
+      phase: "Phase 4",
+      title: "AI Workforce Platform",
+      status: "Future",
+      items: [
+        "Autonomous AI employees",
+        "Cross-channel communication",
+        "Industry-specific agents",
+        "Marketplace",
+        "Enterprise orchestration",
+        "Global deployment"
+      ]
+    }
+  ];
+
+  const statusColors = {
+    "Live": "bg-emerald-400/10 text-emerald-300",
+    "In Progress": "bg-blue/10 text-blue",
+    "Coming Soon": "bg-violet/10 text-violet",
+    "Future": "bg-white/5 text-ink-3"
+  };
+
+  return (
+    <section className="relative py-28 overflow-hidden">
+      <div className="aurora-stage opacity-40"><div className="aurora-blob b2" /></div>
+      <div className="relative mx-auto max-w-6xl px-5">
+        <SectionHead
+          eyebrow="Roadmap"
+          title="Building the future of AI communication."
+          sub="Our journey from AI receptionist to complete AI workforce platform."
+        />
+        <div className="grid md:grid-cols-2 gap-6">
+          {phases.map((p, i) => (
+            <div key={p.phase} className="glass-strong rounded-2xl p-6 reveal" data-delay={i + 1}>
+              <div className="flex items-center justify-between mb-4">
+                <div>
+                  <div className="text-[10px] uppercase tracking-widest text-ink-3 mb-1">{p.phase}</div>
+                  <h3 className="font-display text-xl font-bold text-ink">{p.title}</h3>
+                </div>
+                <span className={`text-[10px] font-mono px-2 py-1 rounded-full ${statusColors[p.status]}`}>
+                  {p.status}
+                </span>
+              </div>
+              <ul className="space-y-2">
+                {p.items.map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-sm text-ink-2">
+                    <Icon name="check" size={14} className="text-cyan mt-0.5 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ========================================================
+   TARGET INDUSTRIES
+======================================================== */
+function Industries() {
+  const industries = [
+    "Healthcare",
+    "Financial Services",
+    "Insurance",
+    "Legal Services",
+    "Real Estate",
+    "Education",
+    "E-commerce",
+    "Hospitality",
+    "Logistics",
+    "Government",
+    "Customer Support",
+    "SaaS Companies",
+    "Small Business"
+  ];
+
+  return (
+    <section className="relative py-28 overflow-hidden">
+      <div className="relative mx-auto max-w-6xl px-5">
+        <SectionHead
+          eyebrow="Industries"
+          title="Built for every sector."
+          sub="From healthcare to e-commerce, hiDeva adapts to your industry's unique needs."
+        />
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {industries.map((ind, i) => (
+            <div key={ind} className="glass rounded-xl p-5 text-center reveal" data-delay={(i % 4) + 1}>
+              <div className="text-ink font-medium text-sm">{ind}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ========================================================
+   CONTACT
+======================================================== */
+/* ========================================================
+   CONTACT
+======================================================== */
+const CONTACT = [
+  { i: "mail", n: "Email Us", d: "support@hideva.com", href: "mailto:support@hideva.com" },
+  { i: "phone", n: "Call Us", d: "+1 (855) 444-3382", href: "tel:+18554443382" },
+  { i: "message-circle", n: "Live Chat", d: "Available 24/7 with AI assistant", href: "https://hideva.vercel.app/#" },
+  { i: "map-pin", n: "Office", d: "San Francisco, CA", href: "https://maps.google.com" },
+];
+function Contact() {
+  return (
+    <section id="contact" className="relative py-28 overflow-hidden">
+      <div className="aurora-stage opacity-40"><div className="aurora-blob b2" /></div>
+      <div className="relative mx-auto max-w-6xl px-5">
+        <SectionHead
+          eyebrow="Contact"
+          title="Get in touch with our team."
+          sub="Have questions about hiDeva Call Assistant? We're here to help."
+        />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          {CONTACT.map((c, i) => (
+            <TiltCard key={c.n} className="glass rounded-2xl p-6 text-center reveal" data-delay={i + 1}>
+              <div className="w-12 h-12 rounded-xl glass-strong flex items-center justify-center mx-auto mb-4 text-aurora">
+                <Icon name={c.i} size={24} />
+              </div>
+              <h3 className="font-display text-lg font-bold mb-1">{c.n}</h3>
+              <a href={c.href} className="text-ink-2 text-sm hover:text-ink transition">{c.d}</a>
+            </TiltCard>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ---------- expose ---------- */
 Object.assign(window, {
-  Hero, Features, Showcase, Why, Workflow, Testimonials, Pricing, FAQ, FinalCTA, SnapshotsPanel,
+  Hero, Features, Showcase, Why, VisionMission, Integrations, Security, Roadmap, Industries, Workflow, Testimonials, Pricing, FAQ, FinalCTA, SnapshotsPanel, Contact,
 });
