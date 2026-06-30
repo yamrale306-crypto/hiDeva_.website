@@ -472,12 +472,14 @@ a.nav-link:hover { color: var(--ink); }
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.8s cubic-bezier(.4,0,.2,1), visibility 0.8s cubic-bezier(.4,0,.2,1);
+  transition: opacity 0.8s cubic-bezier(.4,0,.2,1), visibility 0.8s cubic-bezier(.4,0,.2,1), transform 0.8s cubic-bezier(.4,0,.2,1);
+  transform: scale(1);
 }
 .intro-overlay.hidden {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+  transform: scale(1.1);
 }
 .intro-content {
   text-align: center;
